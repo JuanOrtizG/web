@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio04</title>
+    <link rel="stylesheet" href="estilos.css">
+    <style>	
+    .container {
+    background: white;
+    padding: 20px;
+    width: 300px;
+    margin: auto;
+    border: 2px solid #ccc;
+}
+
+input {
+    display: block;
+    width: 90%;
+    padding: 8px;
+    margin: 10px auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+
+
+
+#mensaje {
+    font-size: 18px;
+    color: lightslategray;
+    margin-top: 15px;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Monto de Propina</h2>
+        <p>Para el calculo, ingrese el monto por favor:</p>
+        <form action="">
+            <input type="number" id="monto" placeholder="agregue el monto">
+            <input type="number" id="propina" placeholder="agregue % de propina">
+        </form>
+        <button id="calcular">Calcular</button>
+        
+        <p id="mensaje"></p>
+
+    </div>
+
+    <script>
+        // Cuando se presiona el boton "calcular"
+        document.getElementById("calcular").addEventListener("click", function(){
+
+        // capturamos el input de entrada y el mensaje	
+        let monto   = document.getElementById("monto").value;
+        let propina   = document.getElementById("propina").value;
+
+        let mensaje = document.getElementById("mensaje");
+
+        //reinicio el valor de la salida
+        mensaje.innerHTML = "";
+
+
+        // si los inputs estan vacios, mostramos un mensaje
+        if(monto == ""){
+            alert("Por favor, complete el campo de montos");
+        }
+        // caso contrario calculamos el IVA
+        else{
+
+            let _propina=monto*propina/100;
+            
+            let texto =  "El monto de la propina es: " + _propina + " Gs.";   
+            mensaje.innerHTML=texto;
+
+        
+        }
+
+        });
+
+    </script>
+</body>
+</html>

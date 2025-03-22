@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio04</title>
+    <link rel="stylesheet" href="estilos.css">
+    <style>	
+    .container {
+    background: white;
+    padding: 20px;
+    width: 300px;
+    margin: auto;
+    border: 2px solid #ccc;
+    }
+
+    input {
+        display: block;
+        width: 90%;
+        padding: 8px;
+        margin: 10px auto;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    button {
+        padding: 10px;
+        cursor: pointer;
+        margin-left: 5px;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Detectar año bisiesto.</h2>
+        <p>Para el calculo, ingrese el año por favor:</p>
+        <form action="">
+            <input type="number" id="valor" placeholder="agregue el año">
+        </form>
+        <button id="calcular">Calcular</button>
+        
+        
+
+    </div>
+
+    <script>
+        // Cuando se presiona el boton "calcular"
+        document.getElementById("calcular").addEventListener("click", function(){
+
+        // capturamos el input de entrada y el mensaje	
+        let valor   = document.getElementById("valor").value;
+
+               // si los inputs estan vacios, mostramos un mensaje
+        if(valor == ""){
+            alert("Por favor, complete el campo de montos");
+        }
+        // caso contrario calculamos el año bisiesto
+        else{
+
+            if(valor % 4 == 0 && (valor % 100 != 0 || valor % 400 == 0)){
+                alert("El año ingresado es bisiesto");
+            }
+            else{
+                alert("El año ingresado NO es bisiesto");
+            }
+               
+
+        
+        }
+
+        });
+
+    </script>
+</body>
+</html>
